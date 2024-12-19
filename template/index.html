@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Text</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/main.js" async defer></script>
+    <style>
+        @font-face {
+            font-family: 'Tilok';
+            src: url('/static/LN_TILOK_V6_05.TTF');
+        }
+        .tilok {
+            font-family: 'Tilok', sans-serif;
+            font-size: 1.6em !important;
+            position: relative;
+            top: -3px;
+            line-height: 1.1 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown dropdown-left absolute top-0 right-0 m-4">
+        <div tabindex="0" role="button" class="btn m-1">
+          Theme
+          <svg
+            width="12px"
+            height="12px"
+            class="inline-block h-2 w-2 fill-current opacity-60"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 2048 2048">
+            <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+          </svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl">
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Default"
+              value="default" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Black"
+              value="black" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Light"
+              value="light" 
+              />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Retro"
+              value="retro" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Cyberpunk"
+              value="cyberpunk" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Valentine"
+              value="valentine" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Aqua"
+              value="aqua" 
+              />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Forest"
+              value="forest" 
+              />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Luxury"
+              value="luxury" 
+              />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Coffee"
+              value="coffee" 
+              />
+          </li>
+        </ul>
+      </div>
+    <section id="primary">
+        <div class="max-w-xl mx-auto shadow-md rounded-lg p-6">
+            <h1 class="text-2xl font-bold mb-4 text-center">Thai to lanna</h1>
+            <label class="form-control mb-4">
+                <div class="label">
+                    <span class="label-text font-large">ภาษาไทย</span>
+                </div>
+                <textarea id="thai-text" class="textarea textarea-bordered h-24 w-full resize-none" placeholder="พิมพ์ไทยตรงนี้"></textarea>
+            </label>
+            <div class="flex justify-center mb-4">
+                <button class="btn btn-primary" id="trans">แปล</button>
+            </div>
+            <label class="form-control">
+                <div class="label"> 
+                    <span class="label-text font-large">ภาษาล้านนา</span>
+                </div>
+                <textarea id="lanna-text" class="textarea textarea-bordered h-24 w-full resize-none tilok" placeholder="คำเเปลจะขึ้นตรงนี้" readonly></textarea>
+            </label>
+        </div>
+    </section>
+
+    <section id="credit" class="p-12 bg-base-300">
+        <div class="flex w-full flex-col lg:flex-row join sm:join-vertical lg:join-horizontal">
+            <!-- Card 1 -->
+            <div class="join-item card bg-base-300 rounded-box shadow-lg p-4 flex-grow grid place-items-center">
+                <div class="text-center">
+                    <p class="text-lg font-semibold mb-2">
+                        โปรเจคนี้ทำโดย
+                    </p>
+                    <ul class="list-none space-y-1">
+                        <li class="py-1">- Buranasak</li>
+                        <li class="py-1">- Piyaphum</li>
+                        <li class="py-1">- Poonnwich</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="join-item card bg-base-300 rounded-box shadow-lg p-4 flex-grow grid place-items-center">
+                <div class="text-center">
+                    <h3 class="text-lg font-semibold mb-2">ขอขอบคุณ</h3>
+                    <ul class="list-none space-y-1">
+                        <li>
+                            <a class="link underline font-medium" href="https://moradoklanna.com/">มรดกล้านนา</a> 
+                            สำหรับฟอนต์
+                        </li>
+                        <li>
+                            <a class="link underline font-medium" href="https://github.com/rkcosmos/deepcut">Deepcut</a> 
+                            สำหรับตัดคำภาษาไทย
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>   
+</body>
+</html>
